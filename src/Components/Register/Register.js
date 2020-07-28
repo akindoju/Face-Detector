@@ -87,6 +87,9 @@ onSubmitSignIn = () => {
                             type="submit" 
                             value="Register"/>
                     </div>
+                    <div className="lh-copy mt3">
+                        <p href="#0" className="f6 link dim black db pointer" onClick = {() => this.props.onRouteChange('SignIn')}>Sign In?</p>
+                    </div>
                 </div>
             </main>
             </article> 
