@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SignIn.css";
 
 const SignIn = (props) => {
   const { onRouteChange } = props;
@@ -64,7 +65,7 @@ const SignIn = (props) => {
                 Password
               </label>
               <input
-                className="b--black f6 w-100 ba br2 center pa2 input-reset bg-transparent hover-bg-black hover-white "
+                className="b--black f6 w-100 ba br2 center pa2 input-reset bg-transparent hover-bg-black hover-white hover-black"
                 type="password"
                 name="password"
                 id="password"
