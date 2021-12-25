@@ -11,16 +11,16 @@ class Profile extends React.Component {
     };
   }
 
-  onFormChange = ({ target }) => {
-    switch (target.name) {
+  onFormChange = (event) => {
+    switch (event.target.name) {
       case "user-name":
-        this.setState({ name: target.value });
+        this.setState({ name: event.target.value });
         break;
       case "user-age":
-        this.setState({ age: target.value });
+        this.setState({ age: event.target.value });
         break;
       case "user-pet":
-        this.setState({ pet: target.value });
+        this.setState({ pet: event.target.value });
         break;
       default:
         return;
@@ -28,7 +28,7 @@ class Profile extends React.Component {
   };
 
   onProfileUpdate = (data) => {
-    fetch(`https://localhost:3000/${this.props.user.id}`, {
+    fetch(`http://localhost:3000/${this.props.user.id}`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ formInput: data }),
@@ -51,7 +51,7 @@ class Profile extends React.Component {
               className="h3 w3 dib"
               alt="avatar"
             />
-            <h1>{this.stae.name}</h1>
+            <h1>{this.state.name}</h1>
             <h4>{`Images Submitted: ${this.props.user.entries}`}</h4>
             <p>{`Member since: ${new Date(
               this.props.user.joined
@@ -61,11 +61,11 @@ class Profile extends React.Component {
               Name:
             </label>
             <input
-              onChange={() => this.onFormChange()}
+              onChange={this.onFormChange}
               className="pa2 ba w-100"
               placeholder={this.props.user.name}
               type="text"
-              name="username"
+              name="user-name"
               id="name"
             />
 
@@ -73,7 +73,7 @@ class Profile extends React.Component {
               Age:
             </label>
             <input
-              onChange={() => this.onFormChange()}
+              onChange={this.onFormChange}
               className="pa2 ba w-100"
               placeholder={this.props.user.age}
               type="text"
@@ -85,7 +85,7 @@ class Profile extends React.Component {
               Pet:
             </label>
             <input
-              onChange={() => this.onFormChange()}
+              onChange={this.onFormChange}
               className="pa2 ba w-100"
               placeholder={this.props.user.pet}
               type="text"
