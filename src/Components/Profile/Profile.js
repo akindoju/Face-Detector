@@ -28,7 +28,7 @@ class Profile extends React.Component {
   };
 
   onProfileUpdate = (data) => {
-    fetch(`http://localhost:3000/${this.props.user.id}`, {
+    fetch(`http://localhost:3000/profile/${this.props.user.id}`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ formInput: data }),
@@ -37,7 +37,7 @@ class Profile extends React.Component {
         this.props.toggleModal();
         this.props.loadUser({ ...this.props.user, ...data });
       })
-      .catch(console.log);
+      .catch((err) => console.log(err));
   };
 
   render() {
@@ -98,9 +98,7 @@ class Profile extends React.Component {
               style={{ display: "flex", justifyContent: "space-evenly" }}
             >
               <button
-                onClick={() => {
-                  this.onProfileUpdate({ name, age, pet });
-                }}
+                onClick={() => this.onProfileUpdate({ name, age, pet })}
                 className="b pa2 grow pointer hover-white w-40 bg-light-blue b--black-20"
               >
                 Save
