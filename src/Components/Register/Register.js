@@ -5,7 +5,7 @@ const Register = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // onSubmitSignIn = () => {
+  // onSubmitsignIn = () => {
   //         fetch('https://calm-tundra-76384.herokuapp.com/Register', {
   //             method: 'post',
   //             headers: {'Content-Type': 'application/json'},
@@ -24,7 +24,7 @@ const Register = (props) => {
   //             })
   //     }
 
-  const onSubmitSignIn = () => {
+  const onSubmitsignIn = () => {
     fetch("http://localhost:3000/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -88,7 +88,7 @@ const Register = (props) => {
           </fieldset>
           <div className="">
             <input
-              onClick={() => onSubmitSignIn()}
+              onClick={() => onSubmitsignIn()}
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
               value="Register"
@@ -98,7 +98,7 @@ const Register = (props) => {
             <p
               href="#0"
               className="f6 link dim black db pointer"
-              onClick={() => props.onRouteChange("SignIn")}
+              onClick={() => props.onRouteChange("signIn")}
             >
               Sign In?
             </p>

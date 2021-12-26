@@ -12,7 +12,7 @@ const navigation = ({ onRouteChange, isSignedIn, toggleModal }) => {
     return (
       <nav style={{ display: "flex", justifyContent: "flex-end" }}>
         <p
-          onClick={() => onRouteChange("SignIn")}
+          onClick={() => onRouteChange("signIn")}
           className="f3 link dim black underline pa3 pointer"
         >
           Sign In

@@ -7,7 +7,7 @@ const SignIn = (props) => {
   const [signInPassword, setSignInPassword] = useState("");
 
   const onSubmitSignIn = () => {
-    fetch("http://localhost:3000/SignIn", {
+    fetch("http://localhost:3000/signIn", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -24,8 +24,8 @@ const SignIn = (props) => {
       });
   };
 
-  // onSubmitSignIn = () => {
-  //     fetch('https://calm-tundra-76384.herokuapp.com/SignIn', {
+  // onSubmitsignIn = () => {
+  //     fetch('https://calm-tundra-76384.herokuapp.com/signIn', {
   //         method: 'post',
   //         headers: {'Content-Type': 'application/json'},
   //         body: JSON.stringify({
