@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./SignIn.css";
 
-const SignIn = (props) => {
-  const { onRouteChange } = props;
+const SignIn = ({ onRouteChange, loadUser }) => {
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
+
+  const saveAuthTokenInSession = (token) => {
+    window.sessionStorage.setItem("token", token);
+  };
 
   const onSubmitSignIn = () => {
     fetch("http://localhost:3000/signIn", {
@@ -16,10 +19,11 @@ const SignIn = (props) => {
       }),
     })
       .then((response) => response.json())
-      .then((user) => {
-        if (user.id) {
-          props.loadUser(user);
-          props.onRouteChange("home");
+      .then((data) => {
+        if (data.userId && data.success === "true") {
+          saveAuthTokenInSession(data.token);
+          loadUser(data);
+          onRouteChange("home");
         }
       });
   };
