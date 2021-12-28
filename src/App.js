@@ -93,22 +93,26 @@ class App extends Component {
   };
 
   faceCalculations = (data) => {
-    const image = document.getElementById("inputImage");
-    const width = Number(image.width);
-    const height = Number(image.height);
-    return data.outputs[0].data.regions.map((face) => {
-      const clarifaiFace = face.region_info.bounding_box;
-      return {
-        leftCol: clarifaiFace.left_col * width,
-        topRow: clarifaiFace.top_row * height,
-        rightCol: width - clarifaiFace.right_col * width,
-        bottomRow: height - clarifaiFace.bottom_row * height,
-      };
-    });
+    if (data && data.outputs) {
+      const image = document.getElementById("inputImage");
+      const width = Number(image.width);
+      const height = Number(image.height);
+      return data.outputs[0].data.regions.map((face) => {
+        const clarifaiFace = face.region_info.bounding_box;
+        return {
+          leftCol: clarifaiFace.left_col * width,
+          topRow: clarifaiFace.top_row * height,
+          rightCol: width - clarifaiFace.right_col * width,
+          bottomRow: height - clarifaiFace.bottom_row * height,
+        };
+      });
+    } else return;
   };
 
   displayFaceBoxes = (boxes) => {
-    this.setState({ boxes: boxes });
+    if (boxes) {
+      this.setState({ boxes: boxes });
+    }
   };
 
   onInputChange = (event) => {
@@ -148,6 +152,7 @@ class App extends Component {
     fetch("http://localhost:3000/imageUrl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
+      Authorization: window.sessionStorage.getItem("token"),
       body: JSON.stringify({
         input: this.state.input,
       }),
@@ -158,6 +163,7 @@ class App extends Component {
           fetch("http://localhost:3000/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
+            Authorization: window.sessionStorage.getItem("token"),
             body: JSON.stringify({
               id: this.state.user.id,
             }),
