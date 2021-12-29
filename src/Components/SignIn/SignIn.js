@@ -6,11 +6,11 @@ const SignIn = ({ onRouteChange, loadUser }) => {
   const [signInPassword, setSignInPassword] = useState("");
 
   const saveAuthTokenInSession = (token) => {
-    window.sessionStorage.setItem("token", token);
+    window.localStorage.setItem("token", token);
   };
 
   const onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signIn", {
+    fetch("http://localhost:3000/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -20,25 +20,28 @@ const SignIn = ({ onRouteChange, loadUser }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.userId && data.success === "true") {
+        if (data && data.success === "true") {
           saveAuthTokenInSession(data.token);
-          fetch(`http://localhost:3000/profile/${data.userId}`, {
-            method: "get",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: data.token,
-            },
-          })
-            .then((resp) => resp.json())
-            .then((user) => {
-              if (user && user.email) {
-                loadUser(user);
-                onRouteChange("home");
-              }
-            })
-            .catch(console.log);
+          loadUser(data.user);
+          onRouteChange("home");
+          // fetch(`http://localhost:3000/profile/${data.userId}`, {
+          //   method: "get",
+          //   headers: {
+          //     "Content-Type": "application/json",
+          //     Authorization: data.token,
+          //   },
+          // })
+          //   .then((resp) => resp.json())
+          //   .then((user) => {
+          //     if (user && user.email) {
+          //       loadUser(user);
+          //       onRouteChange("home");
+          //     }
+          //   })
+          //   .catch(console.log);
         }
-      });
+      })
+      .catch(console.log);
   };
 
   // onSubmitsignIn = () => {
