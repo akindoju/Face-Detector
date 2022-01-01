@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 class Rank extends React.Component {
   constructor() {
@@ -24,7 +24,7 @@ class Rank extends React.Component {
 
   generateEmoji = (entries) => {
     fetch(
-      `https://twlvnl7hai.execute-api.us-east-1.amazonaws.com/rank?rank=${entries}`
+      `https://7e631cv7hl.execute-api.us-east-1.amazonaws.com/rank?rank=${entries}`
     )
       .then((res) => res.json())
       .then((data) => this.setState({ emoji: data.input }))
