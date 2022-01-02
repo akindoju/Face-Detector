@@ -36,7 +36,7 @@ const initialState = {
     email: "",
     entries: 0,
     joined: "",
-    phoneNumber: "",
+    phone: "",
   },
 };
 
@@ -83,11 +83,11 @@ class App extends Component {
     this.setState({
       user: {
         id: data.id,
-        name: data.name,
         email: data.email,
+        name: data.name,
+        phone: data.phone,
         entries: data.entries,
         joined: data.joined,
-        phoneNumber: data.phone,
       },
     });
   };
