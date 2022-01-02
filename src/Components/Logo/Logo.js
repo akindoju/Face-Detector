@@ -18,7 +18,7 @@ const Logo = () => {
             src={logo}
             width="100"
             height="120"
-          />{" "}
+          />
         </div>
       </Tilt>
     </div>

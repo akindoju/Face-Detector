@@ -8,8 +8,8 @@ import FaceRecognition from "./Components/FR/FaceRecognition";
 import SignIn from "./Components/SignIn/SignIn";
 import Register from "./Components/Register/Register";
 import Modal from "./Components/Modal/Modal";
-import "./App.css";
 import Profile from "./Components/Profile/Profile";
+import "./App.css";
 
 const particlesOption = {
   particles: {
@@ -36,8 +36,7 @@ const initialState = {
     email: "",
     entries: 0,
     joined: "",
-    pet: "",
-    age: "",
+    phoneNumber: "",
   },
 };
 
@@ -88,6 +87,7 @@ class App extends Component {
         email: data.email,
         entries: data.entries,
         joined: data.joined,
+        phoneNumber: data.phone,
       },
     });
   };

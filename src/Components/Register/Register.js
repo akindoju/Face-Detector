@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const Register = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
   // onSubmitsignIn = () => {
@@ -31,6 +32,7 @@ const Register = (props) => {
       body: JSON.stringify({
         name: name,
         email: email,
+        phone: phone,
         password: password,
       }),
     })
@@ -71,6 +73,18 @@ const Register = (props) => {
                 name="email-address"
                 id="email-address"
                 onChange={({ target }) => setEmail(target.value)}
+              />
+            </div>
+            <div className="mt3">
+              <label className="db fw6 lh-copy f6" htmlFor="phone">
+                Phone Number
+              </label>
+              <input
+                className="b--black f6 w-100 ba br2 center pa2 input-reset bg-transparent hover-bg-black hover-white "
+                type="phone"
+                name="phone"
+                id="phone"
+                onChange={({ target }) => setPhone(target.value)}
               />
             </div>
             <div className="mv3">
