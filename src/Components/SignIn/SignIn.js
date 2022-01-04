@@ -24,21 +24,6 @@ const SignIn = ({ onRouteChange, loadUser }) => {
           saveAuthTokenInSession(data.token);
           loadUser(data.user);
           onRouteChange("home");
-          // fetch(`http://localhost:3000/profile/${data.userId}`, {
-          //   method: "get",
-          //   headers: {
-          //     "Content-Type": "application/json",
-          //     Authorization: data.token,
-          //   },
-          // })
-          //   .then((resp) => resp.json())
-          //   .then((user) => {
-          //     if (user && user.email) {
-          //       loadUser(user);
-          //       onRouteChange("home");
-          //     }
-          //   })
-          //   .catch(console.log);
         }
       })
       .catch(console.log);
