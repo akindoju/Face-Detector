@@ -108,6 +108,12 @@ body {
       color: rgba(32, 223, 127, 1);
       font-family: "Lexend Deca", sans-serif;
       font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

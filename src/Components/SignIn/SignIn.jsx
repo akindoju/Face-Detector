@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SignIn.css";
 
 const SignIn = ({ onRouteChange, loadUser }) => {
   const [signInEmail, setSignInEmail] = useState("");
