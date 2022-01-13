@@ -1,5 +1,5 @@
 import React from "react";
-import "./Profile.css";
+import "./Profile.scss";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -49,79 +49,63 @@ class Profile extends React.Component {
     const { name, phone, email } = this.state;
     return (
       <div className="profile-modal">
-        <article className="br3 ba shadow-5 b--black-10 mv4 w-100 w-50-m w-25-l mw6 center bg-white">
-          <main className="pa4 black-80 w-80">
-            <img
-              src="http://tachyons.io/img/logo.jpg"
-              className="h3 w3 dib"
-              alt="avatar"
-            />
+        <article className="profile-modal__container">
+          <div className="profile-modal__container--top">
+            <img src="http://tachyons.io/img/logo.jpg" alt="avatar" />
             <h1>{this.state.name}</h1>
             <h4>{`Images Submitted: ${this.props.user.entries}`}</h4>
             <p>{`Member since: ${new Date(
               this.props.user.joined
             ).toLocaleDateString()}`}</p>
             <hr />
+          </div>
 
-            <label className="mt2 fw6" htmlFor="user-email">
-              Email:
-            </label>
+          <div className="profile-modal__container--body">
+            <label htmlFor="user-email">Email:</label>
             <input
               onChange={this.onFormChange}
-              className="pa2 ba w-100"
               placeholder={this.props.user.email}
               type="text"
               name="user-email"
               id="user-email"
             />
 
-            <label className="mt2 fw6" htmlFor="user-name">
-              Name:
-            </label>
+            <label htmlFor="user-name">Name:</label>
             <input
               onChange={this.onFormChange}
-              className="pa2 ba w-100"
               placeholder={this.props.user.name}
               type="text"
               name="user-name"
               id="user-name"
             />
 
-            <label className="mt2 fw6" htmlFor="user-phone">
-              Phone Number:
-            </label>
+            <label htmlFor="user-phone">Phone Number:</label>
             <input
               onChange={this.onFormChange}
-              className="pa2 ba w-100"
               placeholder={this.props.user.phone}
               type="text"
               name="user-phone"
               id="user-phone"
             />
+          </div>
 
-            <div
-              className="mt4"
-              style={{ display: "flex", justifyContent: "space-evenly" }}
+          <div
+            className="profile-modal__container--bottom"
+            style={{ display: "flex", justifyContent: "space-evenly" }}
+          >
+            <button
+              onClick={() => {
+                this.onProfileUpdate({ name, phone, email });
+              }}
             >
-              <button
-                onClick={() => {
-                  this.onProfileUpdate({ name, phone, email });
-                }}
-                className="b pa2 grow pointer hover-white w-40 bg-light-blue b--black-20"
-              >
-                Save
-              </button>
+              Save
+            </button>
 
-              <button
-                className="b pa2 grow pointer hover-white w-40 bg-light-red b--black-20"
-                onClick={() => this.props.toggleModal()}
-              >
-                Cancel
-              </button>
-            </div>
-          </main>
+            <button onClick={() => this.props.toggleModal()}>Cancel</button>
+          </div>
+
           <div className="modal-close" onClick={() => this.props.toggleModal()}>
-            &times;
+            <p>&times;</p>
           </div>
         </article>
       </div>

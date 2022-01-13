@@ -124,7 +124,7 @@ body {
 
 .profileIcon {
   position: absolute;
-  right: 3rem;
+  left: 3rem;
   top: 3rem;
   cursor: pointer;
 }
@@ -240,4 +240,11 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
+}
+
+.dropdownMenu {
+  &__item {
+    font-size: 1.5rem;
+    font-family: "Lexend Deca", sans-serif;
+  }
 }
