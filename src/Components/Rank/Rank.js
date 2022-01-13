@@ -33,10 +33,10 @@ class Rank extends React.Component {
   render() {
     return (
       <div>
-        <div className="white f3">
-          <p>{`${this.props.name} , your current rank is...`}</p>
-          <div className="white f1 ">{this.props.entries}</div>
-          <div className="white f1 ">{`Rank Badge: ${this.state.emoji}`}</div>
+        <div className="white f3 rank">
+          <p className="rank__text">{`${this.props.name} , your current rank is...`}</p>
+          <div className="white rank__entries">{this.props.entries}</div>
+          <div className="white rank__badge">{`Rank Badge: ${this.state.emoji}`}</div>
         </div>
       </div>
     );
