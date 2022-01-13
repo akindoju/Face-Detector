@@ -1,7 +1,13 @@
 import React from "react";
 import "./ImageLinkForm.css";
 
-const ImageLinkForm = ({ onInputChange, onButtonSubmit, boxes, imageUrl }) => {
+const ImageLinkForm = ({
+  onInputChange,
+  onButtonSubmit,
+  boxes,
+  imageUrl,
+  istestLinkVisible,
+}) => {
   return (
     <div className="f4 imageLinkForm">
       <p className="imageLinkForm__text">
@@ -21,10 +27,12 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit, boxes, imageUrl }) => {
           Detect
         </button>
       </div>
-      <p className="imageLinkForm__testLink">
-        Test Link:
-        "https://cdn.vox-cdn.com/thumbor/zcdhPZbwtnwiator3LCNdKmGihw=/1400x788/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/13762264/fake_ai_faces.png"
-      </p>
+      {istestLinkVisible ? (
+        <p className="imageLinkForm__testLink">
+          Test Link:
+          "https://techcrunch.com/wp-content/uploads/2019/02/which1.png"
+        </p>
+      ) : null}
 
       <div className="imageLinkForm__image">
         <div className="relative mt2">

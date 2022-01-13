@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navigation from "./Components/Navigation/Navigation";
 import ImageLinkform from "./Components/ILF/ImageLinkForm";
 import Rank from "./Components/Rank/Rank";
-import FaceRecognition from "./Components/FR/FaceRecognition";
 import SignIn from "./Components/SignIn/SignIn";
 import Register from "./Components/Register/Register";
 import Modal from "./Components/Modal/Modal";
@@ -16,6 +15,7 @@ const initialState = {
   route: "signIn",
   isSignedIn: false,
   isProfileOpen: false,
+  istestLinkVisible: true,
   user: {
     id: "",
     name: "",
@@ -134,6 +134,7 @@ class App extends Component {
   // }
 
   onButtonSubmit = () => {
+    this.setState({ istestLinkVisible: false });
     this.setState({ imageUrl: this.state.input });
     fetch("http://localhost:3000/imageUrl", {
       method: "post",
@@ -215,6 +216,7 @@ class App extends Component {
                 onButtonSubmit={this.onButtonSubmit}
                 boxes={boxes}
                 imageUrl={imageUrl}
+                istestLinkVisible={this.state.istestLinkVisible}
               />
               {/* <FaceRecognition boxes={boxes} imageUrl={imageUrl} /> */}
             </div>
