@@ -12,9 +12,9 @@ html {
   /* 16px is browser default */
   font-size: 62.5%; /* 1rem = 10px; 10px/16px = 62.5% */
 
-  /* @media only screen and (max-width: 1000px) {
-    font-size: 50%;
-  } */
+  // @media only screen and (max-width: 1000px) {
+  //   font-size: 50%;
+  // }
 }
 
 body {
@@ -25,10 +25,26 @@ body {
   height: 100vh;
 
   &__svg {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: -2rem;
     right: 0;
     width: 100%;
+
+    @media only screen and (max-width: 850px) {
+      bottom: -2.5rem;
+    }
+
+    @media only screen and (max-width: 650px) {
+      bottom: -3rem;
+    }
+
+    @media only screen and (max-width: 450px) {
+      bottom: -3.5rem;
+    }
+
+    @media only screen and (max-width: 250px) {
+      bottom: -4rem;
+    }
   }
 }
 
