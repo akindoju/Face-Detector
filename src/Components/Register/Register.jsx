@@ -46,7 +46,7 @@ const Register = (props) => {
   };
 
   return (
-    <main className="authPage" style={{ height: "90%" }}>
+    <main className="authPage registerAuthPage">
       <h1 className="authPage__title">Register</h1>
       <input
         className="authPage__input"

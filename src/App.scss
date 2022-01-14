@@ -12,9 +12,9 @@ html {
   /* 16px is browser default */
   font-size: 62.5%; /* 1rem = 10px; 10px/16px = 62.5% */
 
-  // @media only screen and (max-width: 1000px) {
-  //   font-size: 50%;
-  // }
+  @media only screen and (max-width: 350px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -34,16 +34,16 @@ body {
       bottom: -2.5rem;
     }
 
-    @media only screen and (max-width: 650px) {
-      bottom: -3rem;
-    }
-
-    @media only screen and (max-width: 450px) {
+    @media only screen and (max-width: 700px) {
       bottom: -3.5rem;
     }
 
-    @media only screen and (max-width: 250px) {
+    @media only screen and (max-width: 500px) {
       bottom: -4rem;
+    }
+
+    @media only screen and (max-width: 350px) {
+      bottom: -5.5rem;
     }
   }
 }
@@ -135,6 +135,14 @@ body {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.registerAuthPage {
+  height: 90%;
+
+  @media only screen and (max-width: 1100px) {
+    height: 100%;
   }
 }
 
