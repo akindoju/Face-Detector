@@ -7,6 +7,7 @@ const ImageLinkForm = ({
   boxes,
   imageUrl,
   istestLinkVisible,
+  input,
 }) => {
   return (
     <div className="f4 imageLinkForm">
@@ -22,7 +23,9 @@ const ImageLinkForm = ({
         />
         <button
           className="imageLinkForm__form--button"
-          onClick={onButtonSubmit}
+          onClick={() => {
+            input.length > 0 && onButtonSubmit();
+          }}
         >
           Detect
         </button>
@@ -40,8 +43,8 @@ const ImageLinkForm = ({
             id="inputImage"
             alt=""
             src={imageUrl}
-            // width="300"
-            // height="auto"
+            width="300"
+            height="auto"
           />
           {boxes.map((box) => {
             return (
