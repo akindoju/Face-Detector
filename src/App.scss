@@ -139,15 +139,11 @@ body {
 }
 
 .mainPage {
-  height: 80%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  @media only screen and (max-width: 500px) {
-    height: 100%;
-  }
 }
 
 .profileIcon {
@@ -265,23 +261,10 @@ body {
 
   &__image {
     z-index: 100;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
 
-    // img {
-    //   width: 100%;
-    //   height: 100%;
-    //   object-fit: cover;
-    // }
-
-    @media only screen and (max-width: 500px) {
-      top: 60%;
-    }
-
-    @media only screen and (max-width: 400px) {
-      top: 65%;
+    img {
+      width: 30rem;
+      object-fit: cover;
     }
   }
 }
@@ -291,6 +274,10 @@ body {
 
   @media only screen and (max-width: 900px) {
     margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    margin-top: 8rem;
   }
 
   &__text,

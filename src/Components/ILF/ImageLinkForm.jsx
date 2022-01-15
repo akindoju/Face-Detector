@@ -43,8 +43,8 @@ const ImageLinkForm = ({
             id="inputImage"
             alt=""
             src={imageUrl}
-            width="300"
-            height="auto"
+            // width="300"
+            // height="auto"
           />
           {boxes.map((box) => {
             return (
