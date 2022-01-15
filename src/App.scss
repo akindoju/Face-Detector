@@ -144,6 +144,10 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @media only screen and (max-width: 500px) {
+    height: 100%;
+  }
 }
 
 .profileIcon {
@@ -151,6 +155,17 @@ body {
   left: 3rem;
   top: 3rem;
   cursor: pointer;
+  height: 8rem;
+  width: 8rem;
+
+  img {
+    border-radius: 100%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    height: 6rem;
+    width: 6rem;
+  }
 }
 
 .imageLinkForm {
@@ -164,17 +179,31 @@ body {
     font-family: "Lexend Deca", sans-serif;
     font-size: 2rem;
     font-weight: 200;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+      font-size: 1.2rem;
+    }
   }
 
   &__form {
     display: flex;
+    justify-content: center;
+    width: 100%;
     align-items: center;
+
+    @media only screen and (max-width: 400px) {
+      width: 85%;
+    }
 
     &--input {
       border: none;
       background-color: rgba(34, 73, 87, 1);
       height: 4.5rem;
-      width: 50rem;
+      width: 100%;
       border-radius: 1rem;
       font-size: 1.5rem;
       font-family: "Lexend Deca", sans-serif;
@@ -224,36 +253,65 @@ body {
   &__testLink {
     margin-top: 1.5rem;
     color: white;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
   }
 
   &__image {
     z-index: 100;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, 50%);
-    margin-top: 2rem;
+    height: 40rem;
+    object-fit: cover;
   }
 }
 
 .rank {
   margin-bottom: 5rem;
 
+  @media only screen and (max-width: 900px) {
+    margin-bottom: 3rem;
+  }
+
   &__text,
   &__entries {
     font-family: "Lexend Deca", sans-serif;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 3.5rem;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 3rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 2.5rem;
+    }
   }
 
   &__entries {
     font-size: 5rem;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 4rem;
+    }
   }
 
   &__badge {
     font-size: 3rem;
     font-family: "Lexend Deca", sans-serif;
     font-weight: 200;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 3rem;
+    }
   }
 }
 
