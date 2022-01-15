@@ -61,32 +61,38 @@ class Profile extends React.Component {
           </div>
 
           <div className="profile-modal__container--body">
-            <label htmlFor="user-email">Email:</label>
-            <input
-              onChange={this.onFormChange}
-              placeholder={this.props.user.email}
-              type="text"
-              name="user-email"
-              id="user-email"
-            />
+            <div className="profile-modal__container--body-form">
+              <label htmlFor="user-email">Email:</label>
+              <input
+                onChange={this.onFormChange}
+                placeholder={this.props.user.email}
+                type="text"
+                name="user-email"
+                id="user-email"
+              />
+            </div>
 
-            <label htmlFor="user-name">Name:</label>
-            <input
-              onChange={this.onFormChange}
-              placeholder={this.props.user.name}
-              type="text"
-              name="user-name"
-              id="user-name"
-            />
+            <div className="profile-modal__container--body-form">
+              <label htmlFor="user-name">Name:</label>
+              <input
+                onChange={this.onFormChange}
+                placeholder={this.props.user.name}
+                type="text"
+                name="user-name"
+                id="user-name"
+              />
+            </div>
 
-            <label htmlFor="user-phone">Phone Number:</label>
-            <input
-              onChange={this.onFormChange}
-              placeholder={this.props.user.phone}
-              type="text"
-              name="user-phone"
-              id="user-phone"
-            />
+            <div className="profile-modal__container--body-form">
+              <label htmlFor="user-phone">Phone Number:</label>
+              <input
+                onChange={this.onFormChange}
+                placeholder={this.props.user.phone}
+                type="text"
+                name="user-phone"
+                id="user-phone"
+              />
+            </div>
           </div>
 
           <div
