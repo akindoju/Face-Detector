@@ -35,7 +35,7 @@ class App extends Component {
   componentDidMount() {
     const token = window.localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/signin", {
+      fetch("https://shrouded-refuge-87212.herokuapp.com/signin", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -45,13 +45,16 @@ class App extends Component {
         .then((res) => res.json())
         .then((data) => {
           if (data && data.id) {
-            fetch(`http://localhost:3000/profile/${data.id}`, {
-              method: "get",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: token,
-              },
-            })
+            fetch(
+              `https://shrouded-refuge-87212.herokuapp.com/profile/${data.id}`,
+              {
+                method: "get",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: token,
+                },
+              }
+            )
               .then((resp) => resp.json())
               .then((user) => {
                 if (user && user.email) {
@@ -105,38 +108,10 @@ class App extends Component {
     this.setState({ input: event.target.value });
   };
 
-  // onButtonSubmit = () => {
-  //   this.setState({imageUrl: this.state.input});
-  //   fetch('https://calm-tundra-76384.herokuapp.com/imageUrl', {
-  //         method: 'post',
-  //         headers: {'Content-Type': 'application/json'},
-  //         body: JSON.stringify({
-  //             input: this.state.input
-  //         })
-  //       })
-  //       .then(response => response.json())
-  //       .then(response => {
-  //         if(response) {
-  //             fetch('https://calm-tundra-76384.herokuapp.com/image', {
-  //               method: 'put',
-  //               headers: {'Content-Type': 'application/json'},
-  //               body: JSON.stringify({
-  //                   id: this.state.user.id
-  //               })
-  //           }).then(response => response.json())
-  //             .then(count => {
-  //               this.setState(Object.assign(this.state.user, {entries: count}))
-  //             })
-  //         }
-  //     this.faceBox(this.faceCalculations(response))
-  //     })
-  //   .catch(err => console.log(err));
-  // }
-
   onButtonSubmit = () => {
     this.setState({ istestLinkVisible: false });
     this.setState({ imageUrl: this.state.input });
-    fetch("http://localhost:3000/imageUrl", {
+    fetch("https://shrouded-refuge-87212.herokuapp.com/imageUrl", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -149,7 +124,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("http://localhost:3000/image", {
+          fetch("https://shrouded-refuge-87212.herokuapp.com/image", {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -219,7 +194,6 @@ class App extends Component {
                 istestLinkVisible={this.state.istestLinkVisible}
                 input={this.state.input}
               />
-              {/* <FaceRecognition boxes={boxes} imageUrl={imageUrl} /> */}
             </div>
           ) : route === "signIn" ? (
             <SignIn

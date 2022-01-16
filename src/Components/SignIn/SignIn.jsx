@@ -9,7 +9,7 @@ const SignIn = ({ onRouteChange, loadUser }) => {
   };
 
   const onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signin", {
+    fetch("https://shrouded-refuge-87212.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -27,24 +27,6 @@ const SignIn = ({ onRouteChange, loadUser }) => {
       })
       .catch(console.log);
   };
-
-  // onSubmitsignIn = () => {
-  //     fetch('https://calm-tundra-76384.herokuapp.com/signIn', {
-  //         method: 'post',
-  //         headers: {'Content-Type': 'application/json'},
-  //         body: JSON.stringify({
-  //         email: this.state.signInEmail,
-  //         password: this.state.signInPassword
-  //         })
-  //     })
-  //         .then(response => response.json())
-  //         .then(user => {
-  //         if (user.id) {
-  //             this.props.loadUser(user)
-  //             this.props.onRouteChange('home');
-  //         }
-  //         })
-  //     }
 
   return (
     <main className="authPage">

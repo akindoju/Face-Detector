@@ -6,27 +6,8 @@ const Register = (props) => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
-  // onSubmitsignIn = () => {
-  //         fetch('https://calm-tundra-76384.herokuapp.com/Register', {
-  //             method: 'post',
-  //             headers: {'Content-Type': 'application/json'},
-  //             body: JSON.stringify({
-  //                 email: this.state.Email,
-  //                 password: this.state.Password,
-  //                 name: this.state.Name
-  //             })
-  //         })
-  //         .then(response => response.json())
-  //             .then(user => {
-  //                 if(user.id) {
-  //                     this.props.loadUser(user)
-  //                     this.props.onRouteChange('home')
-  //                 }
-  //             })
-  //     }
-
   const onSubmitsignIn = () => {
-    fetch("http://localhost:3000/register", {
+    fetch("https://shrouded-refuge-87212.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

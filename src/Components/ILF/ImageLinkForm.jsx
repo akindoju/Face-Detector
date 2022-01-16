@@ -1,5 +1,4 @@
 import React from "react";
-import "./ImageLinkForm.css";
 
 const ImageLinkForm = ({
   onInputChange,
@@ -39,13 +38,7 @@ const ImageLinkForm = ({
 
       <div className="imageLinkForm__image">
         <div className="relative mt2">
-          <img
-            id="inputImage"
-            alt=""
-            src={imageUrl}
-            // width="300"
-            // height="auto"
-          />
+          <img id="inputImage" alt="" src={imageUrl} />
           {boxes.map((box) => {
             return (
               <div
