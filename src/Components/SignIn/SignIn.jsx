@@ -5,7 +5,7 @@ const SignIn = ({ onRouteChange, loadUser }) => {
   const [signInPassword, setSignInPassword] = useState("");
 
   const saveAuthTokenInSession = (token) => {
-    window.localStorage.setItem("token", token);
+    window.sessionStorage.setItem("token", token);
   };
 
   const onSubmitSignIn = () => {

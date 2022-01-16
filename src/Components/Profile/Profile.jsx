@@ -34,7 +34,7 @@ class Profile extends React.Component {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          Authorization: window.localStorage.getItem("token"),
+          Authorization: window.sessionStorage.getItem("token"),
         },
         body: JSON.stringify({ formInput: data }),
       }
