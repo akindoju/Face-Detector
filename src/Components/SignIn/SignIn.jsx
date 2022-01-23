@@ -29,7 +29,8 @@ const SignIn = ({ onRouteChange, loadUser }) => {
   };
 
   return (
-    <main className="authPage">
+    // <main className="authPageContainer">
+    <div className="authPage">
       <h1 className="authPage__title">Sign In</h1>
       <input
         className="authPage__input"
@@ -57,7 +58,8 @@ const SignIn = ({ onRouteChange, loadUser }) => {
       >
         Don't have an account? <span>Register</span>
       </p>
-    </main>
+    </div>
+    // </main>
   );
 };
 
